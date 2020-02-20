@@ -7,8 +7,8 @@
 </ion-header>
 
 <ion-content [fullscreen]="true" color="dark">
-  <ion-list color="dark">
-    <ion-item *ngFor="let value of allPeople" color="dark">
+  <ion-list color="dark" *ngIf="allPeople">
+    <ion-item *ngFor="let value of allPeople.people" color="dark">
       <ion-avatar slot="start">
         <img src="../assets/clone-trooper.png">
       </ion-avatar>
@@ -19,4 +19,8 @@
       </ion-label>
     </ion-item>
   </ion-list>
+  <ion-infinite-scroll threshold="100px" id="infinite-scroll">
+    <ion-infinite-scroll-content loading-spinner="crescent" loading-text="Loading more data...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
 </ion-content>
