@@ -14,9 +14,11 @@ export class PeopleService {
         return new Observable((observer: Observer<any>) => {
             this.httpClient.get<any>('https://swapi.co/api/people/').subscribe((responce: any) => {
 
+                console.log (responce);
+
 
                 responce.results.forEach(element => {
-                    const charac: People = new People(element.name);
+                    const charac: People = new People(element.name, element.height, element.mass);
                     this.people.push(charac);
                 });
 

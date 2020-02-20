@@ -9,7 +9,14 @@
 <ion-content [fullscreen]="true" color="dark">
   <ion-list color="dark">
     <ion-item *ngFor="let value of allPeople" color="dark">
-      <ion-label>{{ value.name }}</ion-label>
+      <ion-avatar slot="start">
+        <img src="../assets/clone-trooper.png">
+      </ion-avatar>
+      <ion-label>
+        <h2>Name : {{ value.name }}</h2>
+        <h3>Height : {{ value.height }} </h3>
+        <p> Mass : {{ value.mass }}</p>
+      </ion-label>
     </ion-item>
   </ion-list>
 </ion-content>
