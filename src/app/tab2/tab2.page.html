@@ -9,7 +9,14 @@
 <ion-content [fullscreen]="true" color="dark">
   <ion-list color="dark">
     <ion-item *ngFor="let value of allPlanets" color="dark">
-      <ion-label>{{ value.name }}</ion-label>
+      <ion-avatar slot="start">
+        <img src="../assets/pngwave.png">
+      </ion-avatar>
+      <ion-label>
+        <h2>Name : {{ value.name }}</h2>
+        <h3>Gravity : {{ value.gravity }} </h3>
+        <p>Terrain : {{ value.terrain }}</p>
+      </ion-label>
     </ion-item>
   </ion-list>
 </ion-content>

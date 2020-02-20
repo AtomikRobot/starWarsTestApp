@@ -15,7 +15,7 @@ export class PlanetsService {
             this.httpClient.get<any>('https://swapi.co/api/planets/').subscribe((responce: any) => {
 
                 responce.results.forEach(element => {
-                    const value: Planets = new Planets(element.name);
+                    const value: Planets = new Planets(element.name, element.climate, element.gravity, element.terrain);
                     this.planets.push(value);
                 });
 

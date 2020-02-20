@@ -9,7 +9,14 @@
 <ion-content [fullscreen]="true" color="dark">
   <ion-list>
     <ion-item *ngFor="let value of allStarships" color="dark">
-      <ion-label>{{ value.name }}</ion-label>
+      <ion-avatar slot="start">
+        <img src="../assets/starship.png">
+      </ion-avatar>
+      <ion-label>
+        <h2>Name : {{ value.name }}</h2>
+        <h3>Model : {{ value.model }}</h3>
+        <p>Starship class : {{ value.starshipClass }}</p>
+      </ion-label>
     </ion-item>
   </ion-list>
 </ion-content>

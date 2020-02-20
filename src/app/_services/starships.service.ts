@@ -15,7 +15,7 @@ export class StarshipsService {
             this.httpClient.get<any>('https://swapi.co/api/starships/').subscribe((responce: any) => {
 
                 responce.results.forEach(element => {
-                    const ship: Starships = new Starships(element.name);
+                    const ship: Starships = new Starships(element.name, element.model, element.starship_class);
                     this.starships.push(ship);
                 });
 
