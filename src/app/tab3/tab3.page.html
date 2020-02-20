@@ -1,17 +1,15 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
+<ion-header [translucent]="true" color="dark">
+  <ion-toolbar color="dark">
     <ion-title>
-      Tab 3
+      <ion-icon name="airplane-outline"></ion-icon> Starships
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+<ion-content [fullscreen]="true" color="dark">
+  <ion-list>
+    <ion-item *ngFor="let value of allStarships" color="dark">
+      <ion-label>{{ value.name }}</ion-label>
+    </ion-item>
+  </ion-list>
 </ion-content>
